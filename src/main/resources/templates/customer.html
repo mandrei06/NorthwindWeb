@@ -55,12 +55,10 @@
         <td th:text="${customer.phone}">
 
         </td>
+        <td><a th:href="@{customer/delete/{id}(id=${customer.id})}">Delete</a>
+        </td>
         <td>
-            <form action="#" th:action="@{'/customer/delete/{id}'(id=${customer.id})}" th:method="delete" >
-                <button type="submit" class="btn">
-                    Delete
-                </button>
-            </form>
+            <a th:href="@{customer/edit/{id}(id=${customer.id})}">Edit</a>
         </td>
     </tr>
 
