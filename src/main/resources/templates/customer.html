@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-<h1>The Film Details</h1>
+<h1>The Customer Details</h1>
 
 <table>
     <thead>
@@ -35,6 +35,10 @@
         </th>
         <th>
             Phone
+        </th>
+
+        <th>
+
         </th>
 
     </tr>
@@ -50,6 +54,11 @@
         </td>
         <td th:text="${customer.phone}">
 
+        </td>
+        <td><a th:href="@{customer/delete/{id}(id=${customer.id})}">Delete</a>
+        </td>
+        <td>
+            <a th:href="@{customer/edit/{id}(id=${customer.id})}">Edit</a>
         </td>
     </tr>
 
