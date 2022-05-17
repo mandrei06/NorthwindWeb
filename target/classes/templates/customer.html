@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+   <link rel="stylesheet" href="../static/main.css">
+</head>
+<body>
+<h1>The Film Details</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Contact Name
+        </th>
+        <th>
+            Phone
+        </th>
+
+    </tr>
+
+    </thead>
+
+    <tr th:each="customer:${customerList}">
+        <td th:text="${customer.id}">
+
+        </td>
+        <td th:text="${customer.contactName}">
+
+        </td>
+        <td th:text="${customer.phone}">
+
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>

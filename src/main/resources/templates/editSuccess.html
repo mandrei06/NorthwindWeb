@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Customer Deleted</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<div th:insert="fragments/header :: main"></div>
+<h1>Customer Successfully Updated</h1>
+<script th:inline="javascript">
+    window.alert("The customer was updated successfully! You are gonna be redirected to the previous page!");
+    window.location.href = 'http://localhost:8080/customer';
+</script>
+<div th:insert="fragments/footer :: main"></div>
+</body>
+</html>

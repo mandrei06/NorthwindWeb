@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Customer detail</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+<div th:insert="fragments/header :: main"></div>
+<h1>The Customer Details</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Contact Name
+        </th>
+        <th>
+            Phone
+        </th>
+
+    </tr>
+
+    </thead>
+    <tr>
+        <td th:text="${customerAttr.id}">
+
+        </td>
+        <td th:text="${customerAttr.contactName}">
+
+        </td>
+        <td th:text="${customerAttr.phone}">
+
+        </td>
+    </tr>
+</table>
+
+<div th:insert="fragments/footer :: main"></div>
+</body>
+</html>
