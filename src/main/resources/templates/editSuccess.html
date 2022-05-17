@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>Customer Deleted</title>
     <style>
         table {
@@ -22,12 +23,12 @@
     </style>
 </head>
 <body>
-
+<div th:insert="fragments/header :: main"></div>
 <h1>Customer Successfully Updated</h1>
 <script th:inline="javascript">
     window.alert("The customer was updated successfully! You are gonna be redirected to the previous page!");
     window.location.href = 'http://localhost:8080/customer';
 </script>
-
+<div th:insert="fragments/footer :: main"></div>
 </body>
 </html>
