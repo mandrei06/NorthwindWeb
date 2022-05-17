@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <title>Customers</title>
    <link rel="stylesheet" href="../static/main.css">
 </head>
 <body>
-<div th:insert="fragments/header :: main"></div>
-<h1>The Customer Details</h1>
+<h1>The Film Details</h1>
 
 <table>
     <thead>
@@ -21,10 +19,6 @@
         </th>
         <th>
             Phone
-        </th>
-
-        <th>
-
         </th>
 
     </tr>
@@ -41,14 +35,9 @@
         <td th:text="${customer.phone}">
 
         </td>
-        <td><a th:href="@{customer/delete/{id}(id=${customer.id})}">Delete</a>
-        </td>
-        <td>
-            <a th:href="@{customer/edit/{id}(id=${customer.id})}">Edit</a>
-        </td>
     </tr>
 
 </table>
-<div th:insert="fragments/footer :: main"></div>
+
 </body>
 </html>
