@@ -37,6 +37,10 @@
             Phone
         </th>
 
+        <th>
+
+        </th>
+
     </tr>
 
     </thead>
@@ -50,6 +54,13 @@
         </td>
         <td th:text="${customer.phone}">
 
+        </td>
+        <td>
+            <form action="#" th:action="@{'/customer/delete/{id}'(id=${customer.id})}" th:method="delete" >
+                <button type="submit" class="btn">
+                    Delete
+                </button>
+            </form>
         </td>
     </tr>
 

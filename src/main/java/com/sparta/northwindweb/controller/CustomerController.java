@@ -2,16 +2,17 @@ package com.sparta.northwindweb.controller;
 
 import com.sparta.northwindweb.entities.Customer;
 import com.sparta.northwindweb.repositories.CustomerRepository;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
-public class NorthwindController {
+public class CustomerController {
 
     @Autowired
     CustomerRepository customerRepository;
@@ -30,6 +31,12 @@ public class NorthwindController {
         List<Customer> customersList=customerRepository.findAll();
         model.addAttribute("customerList",customersList);
         return "customer";
+    }
+
+    @RequestMapping(value="/customer/delete/{id}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void delete(@PathVariable String id) {
+        customerRepository.delete(customerRepository.getById(id));
     }
 
 }
