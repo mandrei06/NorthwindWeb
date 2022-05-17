@@ -13,3 +13,99 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+.i1 {
+    background-image: url("https://pbs.twimg.com/media/EMreadaWwAAsWDI?format=jpg&name=large");
+    height: 100%;
+    /*    background-attachment: fixed;*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font: 400 20px/1.8 "Lato", sans-serif; /* <------------------------------------------------------ MAIN RULE FOR FONT SIZE BETTER IF I MAKE IT MORE SPCIFIC */
+    color: black;
+    font-family: 'Indie Flower', cursive;
+}
+
+.into_1 {
+    position: relative;
+    height: 100%;
+}
+
+.into_1 .nav_bar {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+
+h3 {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 15px "Lato", sans-serif; /*<----------------------------------------------- THE TITLE OF THE GAP FOR EXAMPLE WHO'S GOT THE PANDORICA*/
+}
+
+h1 {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 20px "Lato", sans-serif;
+    text-align: center;
+}
+
+
+/*-------------------------------------------------- NAVIGATION--------------------------*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    padding: 5px 16px;
+    text-decoration: none;
+    float: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    /*    background-color: #111;*/
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.right {
+    float: right;
+}
+
+.active {
+    color: gray;
+}
+
+
+
+
+
+

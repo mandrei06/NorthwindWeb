@@ -37,4 +37,10 @@ public class ProductsController {
         return "productDelete";
 
     }
+    @GetMapping("/index")
+    public String home(){
+
+        return "index";
+
+    }
 }

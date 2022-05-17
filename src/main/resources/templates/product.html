@@ -33,6 +33,7 @@
         <td th:text="${product.unitPrice}">
 
         </td>
+        <td><a th:href="@{/product/{id}(id=${product.id})}">View</a> </td>
         <td><a th:href="@{/delete/{id}(id=${product.id})}">Delete</a> </td>
     </tr>
 </table>
