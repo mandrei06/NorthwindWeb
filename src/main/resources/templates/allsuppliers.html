@@ -2,27 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href='http://fonts.googleapis.com/css?family=Allan:bold' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
     <title>Supplier Details</title>
-    <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
 
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style>
 </head>
 <body>
+<div th:insert="fragments/header :: main"></div>
+
+<br>
 <h1>Supplier Details</h1>
+<br>
 <table>
     <thead>
     <tr>
