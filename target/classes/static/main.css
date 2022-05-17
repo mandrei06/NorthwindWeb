@@ -1,5 +1,5 @@
 table {
-    font-family: arial, sans-serif;
+    /*font-family: arial, sans-serif;*/
     border-collapse: collapse;
     width: 100%;
 }
@@ -30,7 +30,7 @@ body, html {
     margin: 0;
     font: 400 20px/1.8 "Lato", sans-serif; /* <------------------------------------------------------ MAIN RULE FOR FONT SIZE BETTER IF I MAKE IT MORE SPCIFIC */
     color: black;
-    font-family: 'Indie Flower', cursive;
+    font: 15px "Lato", sans-serif;
 }
 
 .into_1 {
@@ -104,6 +104,9 @@ a:hover {
     color: gray;
 }
 
+.change2 {
+    background-color: black;
+}
 
 
 
