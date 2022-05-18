@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Supplier Details</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
+</head>
+<body>
+<div th:insert="fragments/header :: main"></div>
+
+<br>
+<h1>Supplier Details</h1>
+<br>
+Supplier id: <p th:text="${supplierAttribute.id}" />
+Supplier title: <p th:text="${supplierAttribute.companyName}" />
+</body>
+</html>
