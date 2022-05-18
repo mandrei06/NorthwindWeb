@@ -22,11 +22,17 @@
             Contact Name
         </th>
         <th>
+            Company Name
+        </th>
+        <th>
             Phone
         </th>
 
         <th>
 
+        </th>
+        <th>
+            <a th:href="@{customer/add/}">Add New Customer</a>
         </th>
 
     </tr>
@@ -38,6 +44,9 @@
 
         </td>
         <td th:text="${customer.contactName}">
+
+        </td>
+        <td th:text="${customer.companyName}">
 
         </td>
         <td th:text="${customer.phone}">
