@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Supplier</title>
+</head>
+<body>
+<h1>Edit Supplier</h1>
+<form th:action="@{/supplier/update}" th:object="${supplierToEdit}" method="post">
+    <label for="id">Supplier ID:</label><br>
+    <input type="text" id="id" name="id" th:field="*{id}"><br><br>
+    <label for="companyName">Company Name:</label><br>
+    <input type="text" id="companyName" name="companyName" th:field="*{companyName}"><br><br>
+    <label for="address">Address:</label><br>
+    <input type="text" id="address" name="address" th:field="*{address}"><br><br>
+    <label for="country">Country:</label><br>
+    <input type="text" id="country" name="country" th:field="*{country}"><br><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
