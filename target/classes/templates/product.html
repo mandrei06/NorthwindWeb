@@ -20,6 +20,12 @@
         <th>
             Product Name
         </th>
+
+
+        <th >View</a></th>
+        <th>Edit</th>
+        <th>Delete</th>
+
         <th>
             Unit Price
         </th>
@@ -27,6 +33,7 @@
         <th></th>
         <th></th>
         <th><a th:href="@{/product/basket/}">See your basket</a></th>
+
 
     </tr>
 
@@ -38,14 +45,20 @@
         </td>
         <td th:text="${product.productName}">
 
-        </td>
-        <td th:text="${product.unitPrice}">
+<!--        </td>-->
+<!--        <td th:text="${product.unitPrice}">-->
 
-        </td>
+<!--        </td>-->
         <td><a th:href="@{/product/{id}(id=${product.id})}">View</a> </td>
         <td><a th:href="@{/product/edit/{id}(id=${product.id})}">Edit</a> </td>
+
+        <td><a th:href="@{/product/delete/{id}(id=${product.id})}">Delete</a> </td></tr>
+    <tr>
+        <td><a th:href="@{/product/add/}">Add</td>
+
         <td><a th:href="@{/product/delete/{id}(id=${product.id})}">Delete</a> </td>
         <td><a th:href="@{/product/basket/{id}(id=${product.id})}">Add product to basket</a> </td>
+
     </tr>
 </table>
 <div th:insert="fragments/footer :: main"></div>
