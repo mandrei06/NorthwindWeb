@@ -29,8 +29,6 @@
         <td th:text="${supplier.companyName}"></td>
         <td th:text="${supplier.address}"></td>
         <td th:text="${supplier.country}"></td>
-        <td><a th:href="@{edit/{id} (id=${supplier.id})}">Edit</a></td>
-        <td><a th:href="@{delete/{id} (id=${supplier.id})}">Delete</a></td>
         <td><a th:href="@{/supplier/edit/{id} (id=${supplier.id})}">Edit</a></td>
         <td><a th:href="@{/supplier/delete/{id} (id=${supplier.id})}">Delete</a></td>
     </tr>

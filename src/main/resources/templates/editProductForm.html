@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="UTF-8">
-
-    <title>Product editor</title>
+    <title>Edit</title>
     <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/edit.css}">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
 </head>
 <body>
 <!--<div th:insert="fragments/header :: main"></div>-->
-<h1>The Product Details</h1>
-
-<form th:action="@{/updateProduct}" th:object="${productToEdit}" method="post">
-    <label for="productid">Product id:</label><br>
-    <input type="number" id="productid" name="productid" th:field="*{id}"><br>
-    <label for="productname">Product name:</label><br>
-    <input type="text" id="productname" name="productname" th:field="*{productName}"><br>
-    <label for="unitprice">Unit Price:</label><br>
-    <input type="text" id="unitprice" name="unitprice" th:field="*{unitPrice}"><br>
-    <label for="discontinued">Discontinued True/False:</label><br>
-    <input type="text" id="discontinued" name="discontinued" th:field="*{discontinued}"><br><br>
-    <input type="submit" value="Submit">
-</form>
-<!--<div th:insert="fragments/footer :: main"></div>-->
+<div class="editContainer">
+    <div class="contact-box">
+        <div class="left"></div>
+        <div class="right">
+            <form th:action="@{/updateProduct}" th:object="${productToEdit}" method="post">
+                <h2>Edit Product</h2>
+                <input type="number" id="productid" name="productid" th:field="*{id}" class="field"
+                       placeholder="Product Id">
+                <input type="text" id="productname" name="productname" th:field="*{productName}" class="field"
+                       placeholder="Product Name">
+                <input type="text" id="unitprice" name="unitprice" th:field="*{unitPrice}" class="field"
+                       placeholder="Unit Price">
+                <input type="text" id="discontinued" name="discontinued" th:field="*{discontinued}" class="field"
+                       placeholder="Discountinued True | False">
+                <button class="btn"><a th:href="@{/product}">Back</button>
+                <hr>
+                <button type="submit" value="Submit" class="btn">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:insert="fragments/footer :: main"></div>
 </body>
 </html>
