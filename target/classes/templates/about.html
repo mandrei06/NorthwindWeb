@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Northwind|About</title>
+    <meta charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Allan:bold' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/about.css}">
+
+</head>
+
+<body>
+
+<div class="Iholder b1">
+    <div class="post "><h1 class="heading">About this site </h1><h3 class="writing">
+        This site was created so our team could learn about MySql and how to implement the CRUD interface.</h3></div>
+    <div class="post_2 "><h1 class="heading">Team Members</h1><h3 class="writings">Callum : Devloper <hr> Andy : Developer <hr> Reman : Web designer</h3></div>
+</div>
+
+<div class="Iholder b2">
+</div>
+
+<!--<div class="Iholder b3">-->
+<!--    <div class="post_3"><h1 class="heading">Smoking Kills</h1><h3 clasas="writings">Our team does not advocate smoking</h3></div></div>-->
+
+<div class="nav_bar">
+    <ul>
+        <li><a th:href="@{/customer}"><h3>Customer</h3></a></li>
+        <li><a th:href="@{/product}"><h3>Product</h3></a></li>
+        <li><a th:href="@{/supplier/all}"><h3>Supplier</h3></a></li>
+        <li class="social right"><a th:href="@{/}"><h1><b>Northwind</b></h1></a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

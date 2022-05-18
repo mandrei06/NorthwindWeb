@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href='http://fonts.googleapis.com/css?family=Allan:bold' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
+    <title>Supplier Details</title>
+
+</head>
+<body>
+<div th:insert="fragments/header :: main"></div>
+
+<br>
+<h1>Supplier Details</h1>
+<br>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Company Name</th>
+        <th>Address</th>
+        <th>Country</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tr th:each="supplier : ${supplierAttributes}">
+        <td th:text="${supplier.id}"></td>
+        <td th:text="${supplier.companyName}"></td>
+        <td th:text="${supplier.address}"></td>
+        <td th:text="${supplier.country}"></td>
+        <td><a th:href="@{edit/{id} (id=${supplier.id})}">Edit</a></td>
+        <td><a th:href="@{delete/{id} (id=${supplier.id})}">Delete</a></td>
+    </tr>
+</table>
+</body>
+</html>
