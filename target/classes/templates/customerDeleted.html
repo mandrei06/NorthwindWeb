@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Deleted</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
+</head>
+<body>
+<div th:insert="fragments/header :: main"></div>
+<h1>Customer Successfully Deleted</h1>
+<h2> Customer number<span th:text="${customer_deleted}"></span></h2>
+<script th:inline="javascript">
+  window.alert("The customer was deleted, successfully! You are gonna be redirected to the previous page!");
+  window.location.href = 'http://localhost:8080/customer';
+</script>
+<div th:insert="fragments/footer :: main"></div>
+</body>
+</html>
