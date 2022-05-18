@@ -11,7 +11,21 @@
 <br>
 <h1>Supplier Details</h1>
 <br>
-Supplier id: <p th:text="${supplierAttribute.id}" />
-Supplier title: <p th:text="${supplierAttribute.companyName}" />
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Company Name</th>
+        <th>Address</th>
+        <th>Country</th>
+    </tr>
+    </thead>
+    <tr>
+        <td th:text="${supplierAttribute.id}"></td>
+        <td th:text="${supplierAttribute.companyName}"></td>
+        <td th:text="${supplierAttribute.address}"></td>
+        <td th:text="${supplierAttribute.country}"></td>
+    </tr>
+</table>
 </body>
 </html>

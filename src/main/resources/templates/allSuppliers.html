@@ -20,6 +20,8 @@
         <th>Company Name</th>
         <th>Address</th>
         <th>Country</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     </thead>
     <tr th:each="supplier : ${supplierAttributes}">
@@ -27,6 +29,8 @@
         <td th:text="${supplier.companyName}"></td>
         <td th:text="${supplier.address}"></td>
         <td th:text="${supplier.country}"></td>
+        <td><a th:href="@{edit/{id} (id=${supplier.id})}">Edit</a></td>
+        <td><a th:href="@{delete/{id} (id=${supplier.id})}">Delete</a></td>
     </tr>
 </table>
 </body>

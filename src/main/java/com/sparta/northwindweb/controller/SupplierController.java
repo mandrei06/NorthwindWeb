@@ -5,9 +5,7 @@ import com.sparta.northwindweb.repositories.SupplierRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,16 +15,9 @@ public class SupplierController {
     @Autowired
     private SupplierRepository repository;
 
-    @GetMapping("/supplier/welcome")
-    public String sayHello(){
-        return "welcome";
-    }
-
     @GetMapping("/supplier/{id}")
     public String getSupplierById(@PathVariable Integer id, Model model) {
-        //Supplier supplierObject = new Supplier();
-        Supplier supplierObject = repository.getById(id);
-        model.addAttribute("supplierAttribute", supplierObject);
+        model.addAttribute("supplierAttribute", repository.getById(id));
         return "supplier";
     }
 
@@ -34,11 +25,30 @@ public class SupplierController {
     public String getSupplierById(Model model) {
         List<Supplier> supplierList = repository.findAll();
         model.addAttribute("supplierAttributes", supplierList);
-        return "allsuppliers";
+        return "allSuppliers";
     }
 
-    @DeleteMapping("/supplier/delete/{id}")
-    public void deleteSupplierById(@PathVariable Integer id) {
+    @GetMapping("/supplier/delete/{id}")
+    public String deleteSupplierById(@PathVariable Integer id, Model model) {
+        model.addAttribute("id", id);
         repository.deleteById(id);
+        return "allSuppliers";
+    }
+
+    @GetMapping("/supplier/edit/{id}")
+    public String editSupplier(@PathVariable int id, Model model) {
+        Supplier supplier = repository.getById(id);
+        model.addAttribute("supplierToEdit", supplier);
+        return "editSupplier";
+    }
+
+    @PostMapping("/supplier/update")
+    public String updateSupplier(@ModelAttribute("supplierToEdit") Supplier supplier) {
+        Supplier temp = repository.getById(supplier.getId());
+        temp.setCompanyName(supplier.getCompanyName());
+        temp.setAddress(supplier.getAddress());
+        temp.setCountry(supplier.getCountry());
+        repository.save(temp);
+        return "editSuccess";
     }
 }
