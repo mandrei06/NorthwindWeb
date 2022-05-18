@@ -21,11 +21,12 @@
             Product Name
         </th>
         <th>
-            Unit Proce
+            Unit Price
         </th>
         <th ><a th:href="@{/product/add/}">Add New Product</a></th>
         <th></th>
         <th></th>
+        <th><a th:href="@{/product/basket/}">See your basket</a></th>
 
     </tr>
 
@@ -44,6 +45,7 @@
         <td><a th:href="@{/product/{id}(id=${product.id})}">View</a> </td>
         <td><a th:href="@{/product/edit/{id}(id=${product.id})}">Edit</a> </td>
         <td><a th:href="@{/product/delete/{id}(id=${product.id})}">Delete</a> </td>
+        <td><a th:href="@{/product/basket/{id}(id=${product.id})}">Add product to basket</a> </td>
     </tr>
 </table>
 <div th:insert="fragments/footer :: main"></div>
