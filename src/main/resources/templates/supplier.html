@@ -18,6 +18,8 @@
         <th>Company Name</th>
         <th>Address</th>
         <th>Country</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     </thead>
     <tr>
@@ -25,6 +27,8 @@
         <td th:text="${supplierAttribute.companyName}"></td>
         <td th:text="${supplierAttribute.address}"></td>
         <td th:text="${supplierAttribute.country}"></td>
+        <td><a th:href="@{/supplier/edit/{id} (id=${supplierAttribute.id})}">Edit</a></td>
+        <td><a th:href="@{/supplier/delete/{id} (id=${supplierAttribute.id})}">Delete</a></td>
     </tr>
 </table>
 </body>
