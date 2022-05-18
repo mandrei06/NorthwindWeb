@@ -7,7 +7,9 @@
 
 </head>
 <body>
-<table>
+<!--<div class="container">-->
+    <div th:insert="fragments/header :: main"></div>
+    <table>
     <thead>
     <tr>
         <th>
@@ -18,6 +20,19 @@
         </th>
         <th>
             Phone
+        </th>
+        <th>
+            In Stock
+        </th>
+        <th>
+            In order
+        </th>
+        <th>
+            Re-order Level
+        </th>
+        <th>
+            <a th:href="@{/product}">  Back
+            </a>
         </th>
 
     </tr>
@@ -34,10 +49,24 @@
         <td th:text="${productAttr.unitPrice}">
 
         </td>
+        </td>
+        <td th:text="${productAttr.unitsInStock}">
+
+        </td>
+        </td>
+        <td th:text="${productAttr.unitsOnOrder}">
+
+        </td>
+        </td>
+        <td th:text="${productAttr.reorderLevel}">
+
+        </td>
     </tr>
 
 </table>
-
-
+<!--</div>-->
+<footer class="bottom">
+<div th:insert="fragments/footer :: main"></div>
+</footer>
 </body>
 </html>
