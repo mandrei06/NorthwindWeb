@@ -49,6 +49,6 @@ public class SupplierController {
         temp.setAddress(supplier.getAddress());
         temp.setCountry(supplier.getCountry());
         repository.save(temp);
-        return "editSuccess";
+        return "editSupplierSuccess";
     }
 }
