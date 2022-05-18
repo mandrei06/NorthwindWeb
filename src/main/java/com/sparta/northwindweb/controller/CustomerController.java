@@ -57,8 +57,26 @@ public class CustomerController {
         Customer oldState=customerRepository.getById(theCustomer.getId());
         oldState.setContactName(theCustomer.getContactName());
         oldState.setPhone(theCustomer.getPhone());
+        oldState.setCompanyName(theCustomer.getCompanyName());
         customerRepository.save(oldState);
         return "editSuccess";
+    }
+
+    @GetMapping("customer/add/")
+    public String addCustomer(Model model){
+        Customer thisCustomer=new Customer();
+        model.addAttribute("customerToAdd",thisCustomer);
+        return "addCustomerForm";
+    }
+    @PostMapping("/addCustomer")
+    public String addedCustomer(@ModelAttribute("customerToAdd") Customer theCustomer){
+        Customer newCustomer=new Customer();
+        newCustomer.setId(theCustomer.getId());
+        newCustomer.setContactName(theCustomer.getContactName());
+        newCustomer.setPhone(theCustomer.getPhone());
+        newCustomer.setCompanyName(theCustomer.getCompanyName());
+        customerRepository.save(newCustomer);
+        return "addSuccess";
     }
 
 

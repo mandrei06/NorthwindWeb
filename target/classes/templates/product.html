@@ -23,6 +23,9 @@
         <th>
             Unit Proce
         </th>
+        <th ><a th:href="@{/product/add/}">Add New Product</a></th>
+        <th></th>
+        <th></th>
 
     </tr>
 
@@ -39,7 +42,8 @@
 
         </td>
         <td><a th:href="@{/product/{id}(id=${product.id})}">View</a> </td>
-        <td><a th:href="@{/delete/{id}(id=${product.id})}">Delete</a> </td>
+        <td><a th:href="@{/product/edit/{id}(id=${product.id})}">Edit</a> </td>
+        <td><a th:href="@{/product/delete/{id}(id=${product.id})}">Delete</a> </td>
     </tr>
 </table>
 <div th:insert="fragments/footer :: main"></div>
