@@ -8,5 +8,10 @@
 <body>
 <h1>Product Successfully Deleted</h1>
 <h2>Product number <span th:text="${id_deleted}"></span> deleted successfully!</h2>
+
+<script th:inline="javascript">
+    window.alert("The product was deleted, successfully! You are gonna be redirected to the previous page!");
+    window.location.href = 'http://localhost:8080/product';
+</script>
 </body>
 </html>
