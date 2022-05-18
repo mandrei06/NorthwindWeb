@@ -1,0 +1,81 @@
+.Iholder {
+    height: 100%;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.post {
+    width: 25%;
+    margin: 13% 10% 0% 7%;
+    float: left;
+}
+
+
+.post_2 {
+    color: white;
+    float: right;
+    padding: 210px 150px;
+    width: 25%;
+
+}
+
+.post_3 {
+
+    margin: 17% 10% 0% 7%; ;
+    float: left;
+    width: 25%;
+    color: white;
+
+}
+
+
+.heading {
+    font-size: 35px;
+
+}
+
+.writing {
+    font-size: 20px;
+    text-transform: none;
+    opacity: 100%;
+    color: black;
+}
+
+.b6 {
+    /*background-image: url(Images/Fitkit/Timeline.png);*/
+}
+
+
+
+
+.op {
+    opacity: 0.7;
+}
+
+.b1 {
+        background-image: url("https://ak.picdn.net/shutterstock/videos/1424734/thumb/1.jpg");
+
+}
+
+.b2 {
+    background-image: url("https://cutewallpaper.org/21/aesthetic-minimalist-wallpaper/minimalistic-bongo-cat-in-2019-Minimalist-wallpaper-phone-.png");
+    opacity: 0.9;
+}
+
+.b3 {
+    background-image: url("https://img.freepik.com/free-photo/white-smoke-black-background_9083-2995.jpg");
+    /*background-image: url(Images/Fitkit/4.png);*/
+    opacity: 1;
+}
+
+.b4{
+    /*background-image: url(Images/Fitkit/Founders.png)*/
+}
+
+.b5{
+
+    /*background-image: url(Images/Fitkit/company.jpg);*/
+}
