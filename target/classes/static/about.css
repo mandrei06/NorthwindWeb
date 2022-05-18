@@ -57,10 +57,11 @@
 
 .b1 {
         background-image: url("https://ak.picdn.net/shutterstock/videos/1424734/thumb/1.jpg");
+
 }
 
 .b2 {
-    background-image: urL("https://cutewallpaper.org/21/aesthetic-minimalist-wallpaper/minimalistic-bongo-cat-in-2019-Minimalist-wallpaper-phone-.png");
+    background-image: url("https://cutewallpaper.org/21/aesthetic-minimalist-wallpaper/minimalistic-bongo-cat-in-2019-Minimalist-wallpaper-phone-.png");
     opacity: 0.9;
 }
 
