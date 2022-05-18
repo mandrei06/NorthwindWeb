@@ -18,7 +18,12 @@ footer {
     padding: 3px;
     background-color: lightgray;
     color: black;
+    position: sticky;
+    top: 100%;
+
 }
+
+
 .i1 {
     background-image: url("https://pbs.twimg.com/media/EMreadaWwAAsWDI?format=jpg&name=large");
     height: 100%;
