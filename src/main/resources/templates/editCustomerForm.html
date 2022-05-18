@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="UTF-8">
-
-    <title>Customer editor</title>
+    <title>Edit Customer</title>
     <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/edit.css}">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
 </head>
 <body>
-<!--<div th:insert="fragments/header :: main"></div>-->
-<h1>The Customer Details</h1>
-
-<form th:action="@{/updateCustomer}" th:object="${customerToEdit}" method="post">
-    <label for="customerid">Customer id:</label><br>
-    <input type="text" id="customerid" name="customerid" th:field="*{id}"><br>
-    <label for="contactname">Contact name:</label><br>
-    <input type="text" id="contactname" name="contactname" th:field="*{contactName}"><br>
-    <label for="companyname">Company name:</label><br>
-    <input type="text" id="companyname" name="companyname" th:field="*{companyName}"><br>
-    <label for="phone">Phone:</label><br>
-    <input type="text" id="phone" name="phone" th:field="*{phone}"><br><br>
-    <input type="submit" value="Submit">
-</form>
-<!--<div th:insert="fragments/footer :: main"></div>-->
+<div class="editContainer">
+    <!--    <div th:insert="fragments/header :: main"></div>-->
+    <div class="contact-box">
+        <div class="left2"></div>
+        <div class="right">
+            <form th:action="@{/updateCustomer}" th:object="${customerToEdit}" method="post">
+                <h2>Edit Customer</h2>
+                <input type="text" id="customerid" name="customerid" th:field="*{id}" class="field"
+                       placeholder="Customer ID">
+                <input type="text" id="contactname" name="contactname" th:field="*{contactName}" class="field"
+                       placeholder="Name">
+                <input type="text" id="companyname" name="companyname" th:field="*{companyName}" class="field"
+                       placeholder="Company Name">
+                <input type="text" id="phone" name="phone" th:field="*{phone}" class="field"
+                       placeholder="Phone Number">
+                <button class="btn"><a th:href="@{/customer}">Back</button>
+                <hr>
+                <button type="submit" value="Submit" class="btn">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:insert="fragments/footer :: main"></div>
 </body>
 </html>
