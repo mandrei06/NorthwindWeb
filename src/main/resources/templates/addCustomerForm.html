@@ -10,7 +10,7 @@
 <!--<div th:insert="fragments/header :: main"></div>-->
 <h1>The Customer Details</h1>
 
-<form th:action="@{/updateCustomer}" th:object="${customerToEdit}" method="post">
+<form th:action="@{/addCustomer}" th:object="${customerToAdd}" method="post">
     <label for="customerid">Customer id:</label><br>
     <input type="text" id="customerid" name="customerid" th:field="*{id}"><br>
     <label for="contactname">Contact name:</label><br>
