@@ -17,7 +17,7 @@
             <form th:action="@{/updateCustomer}" th:object="${customerToEdit}" method="post">
                 <h2>Edit Customer</h2>
                 <input type="text" id="customerid" name="customerid" th:field="*{id}" class="field"
-                       placeholder="Customer ID">
+                       placeholder="Customer ID" readonly>
                 <input type="text" id="contactname" name="contactname" th:field="*{contactName}" class="field"
                        placeholder="Name">
                 <input type="text" id="companyname" name="companyname" th:field="*{companyName}" class="field"

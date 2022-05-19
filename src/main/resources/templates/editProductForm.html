@@ -17,7 +17,7 @@
             <form th:action="@{/updateProduct}" th:object="${productToEdit}" method="post">
                 <h2>Edit Product</h2>
                 <input type="number" id="productid" name="productid" th:field="*{id}" class="field"
-                       placeholder="Product Id">
+                       placeholder="Product Id" readonly>
                 <input type="text" id="productname" name="productname" th:field="*{productName}" class="field"
                        placeholder="Product Name">
                 <input type="text" id="unitprice" name="unitprice" th:field="*{unitPrice}" class="field"

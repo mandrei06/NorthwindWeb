@@ -17,7 +17,7 @@
             <form th:action="@{/supplier/update}" th:object="${supplierToEdit}" method="post">
                 <h2>Edit Supplier</h2>
                 <input type="text" id="id" name="id" th:field="*{id}" class="field"
-                       placeholder="Supplier ID">
+                       placeholder="Supplier ID" readonly>
                 <input type="text" id="companyName" name="companyName" th:field="*{companyName}" class="field"
                        placeholder="Company Name">
                 <input type="text" id="address" name="address" th:field="*{address}" class="field"

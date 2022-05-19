@@ -80,4 +80,14 @@ public class CustomerController {
     }
 
 
+    @GetMapping("/accessDenied")
+    public String getAccessDeniedPage(){
+        return "accessDenied";
+    }
+    @GetMapping("/login")
+    public String getLoginPage(){
+        return "login";
+    }
+
+
 }
