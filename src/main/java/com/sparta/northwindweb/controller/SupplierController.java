@@ -31,7 +31,7 @@ public class SupplierController {
     @GetMapping("/supplier/delete/{id}")
     public String deleteSupplierById(@PathVariable Integer id) {
         repository.deleteById(id);
-        return "deleteSuccess";
+        return "deleteSupplierSuccess";
     }
 
     @GetMapping("/supplier/edit/{id}")
@@ -51,6 +51,7 @@ public class SupplierController {
     @PostMapping("/supplier/add")
     public String addSupplier(@ModelAttribute("supplierToAdd") Supplier supplier) {
         Supplier temp = new Supplier();
+        temp.setId(supplier.getId());
         temp.setCompanyName(supplier.getCompanyName());
         temp.setAddress(supplier.getAddress());
         temp.setCountry(supplier.getCountry());
