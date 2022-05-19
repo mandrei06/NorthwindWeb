@@ -52,6 +52,20 @@ body{
 .right{
     padding: 25px 40px;
 }
+.left1{
+    background: url("https://s37564.pcdn.co/wp-content/uploads/2017/11/Supplier-101117-scaled.jpeg.optimal.jpeg") no-repeat center;
+    background-size: cover;
+    height: 100%;
+}
+.left2{
+    background: url("https://w0.peakpx.com/wallpaper/23/509/HD-wallpaper-captain-america-america-avengers-captain-captain-roger-captain-rogers-hydra-marvel-sheild-steve-roger.jpg") no-repeat center;
+    background-size: cover;
+    height: 100%;
+}
+
+.right1{
+    padding: 25px 40px;
+}
 
 h2{
     position: relative;

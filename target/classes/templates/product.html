@@ -14,49 +14,24 @@
 <table>
     <thead>
     <tr>
-        <th>
-            ID
-        </th>
-        <th>
-            Product Name
-        </th>
-
+        <th>ID</th>
+        <th>Product Name</th>
         <th >View</a></th>
         <th>Edit</th>
         <th>Delete</th>
-
-        <th>
-            Unit Price
-        </th>
-        <th ><a th:href="@{/product/add/}">Add New Product</a></th>
-        <th></th>
-        <th></th>
+        <th>Add product to basket</th>
         <th><a th:href="@{/product/basket/}">See your basket</a></th>
-
-
     </tr>
-
     </thead>
-
     <tr th:each="product:${productList}">
-        <td th:text="${product.id}">
-
-        </td>
+        <td th:text="${product.id}"></td>
         <td th:text="${product.productName}">
-
-<!--        </td>-->
-<!--        <td th:text="${product.unitPrice}">-->
-
-<!--        </td>-->
         <td><a th:href="@{/product/{id}(id=${product.id})}">View</a> </td>
-
-        <td><a th:href="@{/product/delete/{id}(id=${product.id})}">Delete</a> </td></tr>
-    <tr>
-        <td><a th:href="@{/product/add/}">Add</a></td>
-
+        <td><a th:href="@{/product/edit/{id}(id=${product.id})}">Edit</a> </td>
         <td><a th:href="@{/product/delete/{id}(id=${product.id})}">Delete</a> </td>
-        <td><a th:href="@{/product/basket/{id}(id=${product.id})}">Add product to basket</a> </td>
-
+        <td><a th:href="@{/product/basket/{id}(id=${product.id})}">Add product to basket</a> </td></tr>
+    <tr>
+        <td><a th:href="@{/product/add/}">Add</td>
     </tr>
 </table>
 <div th:insert="fragments/footer :: main"></div>

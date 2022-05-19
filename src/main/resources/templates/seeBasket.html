@@ -9,25 +9,17 @@
 <div th:insert="fragments/header :: main"></div>
 
 <br>
-<h1>The Product Page</h1>
+<h1>Basket</h1>
 <br>
 <table>
     <thead>
     <tr>
-        <th>
-            ID
-        </th>
-        <th>
-            Product Name
-        </th>
-        <th>
-            Unit Price
-        </th>
+        <th>ID</th>
+        <th>Product Name</th>
+        <th>Unit Price</th>
         <th >Date</th>
-        <th></th>
-        <th></th>
-        <th></th>
-
+        <th><a th:href="@{/product}">  Back</a>
+        </th>
     </tr>
 
     </thead>
@@ -44,11 +36,11 @@
         </td>
         <td th:text="${product.getCreateDate()}">
         </td>
-        <td></td>
-        <td></td>
-        <td></td>
+
     </tr>
 </table>
-<div th:insert="fragments/footer :: main"></div>
+<footer class="bottom">
+    <div th:insert="fragments/footer :: main"></div>
+</footer>
 </body>
 </html>
