@@ -29,10 +29,9 @@ public class SupplierController {
     }
 
     @GetMapping("/supplier/delete/{id}")
-    public String deleteSupplierById(@PathVariable Integer id, Model model) {
-        model.addAttribute("id", id);
+    public String deleteSupplierById(@PathVariable Integer id) {
         repository.deleteById(id);
-        return "allSuppliers";
+        return "deleteSuccess";
     }
 
     @GetMapping("/supplier/edit/{id}")
@@ -40,6 +39,23 @@ public class SupplierController {
         Supplier supplier = repository.getById(id);
         model.addAttribute("supplierToEdit", supplier);
         return "editSupplier";
+    }
+
+    @GetMapping("/supplier/add")
+    public String addSupplier(Model model) {
+        Supplier temp = new Supplier();
+        model.addAttribute("supplierToAdd", temp);
+        return "addSupplier";
+    }
+
+    @PostMapping("/supplier/add")
+    public String addSupplier(@ModelAttribute("supplierToAdd") Supplier supplier) {
+        Supplier temp = new Supplier();
+        temp.setCompanyName(supplier.getCompanyName());
+        temp.setAddress(supplier.getAddress());
+        temp.setCountry(supplier.getCountry());
+        repository.save(temp);
+        return "addSuccess";
     }
 
     @PostMapping("/supplier/update")
