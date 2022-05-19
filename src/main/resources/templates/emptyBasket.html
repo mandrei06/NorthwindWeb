@@ -2,16 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Product Delete Page</title>
+
+    <title>Basket</title>
     <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
 </head>
 <body>
-<h1>Product Successfully Deleted</h1>
-<h2>Product number <span th:text="${id_deleted}"></span> deleted successfully!</h2>
-
+<!--<div th:insert="fragments/header :: main"></div>-->
+<h1>Empty basket</h1>
 <script th:inline="javascript">
-    window.alert("The product was deleted, successfully! You are gonna be redirected to the previous page!");
+    window.alert("Please add something in the basket first!");
     window.location.href = 'http://localhost:8080/product';
 </script>
+<!--<div th:insert="fragments/footer :: main"></div>-->
 </body>
 </html>

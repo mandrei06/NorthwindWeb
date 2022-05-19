@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Edit Supplier</title>
+    <title>Edit</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/edit.css}">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
 </head>
 <body>
-<h1>Edit Supplier</h1>
-<form th:action="@{/supplier/update}" th:object="${supplierToEdit}" method="post">
-    <label for="id">Supplier ID:</label><br>
-    <input type="text" id="id" name="id" th:field="*{id}"><br><br>
-    <label for="companyName">Company Name:</label><br>
-    <input type="text" id="companyName" name="companyName" th:field="*{companyName}"><br><br>
-    <label for="address">Address:</label><br>
-    <input type="text" id="address" name="address" th:field="*{address}"><br><br>
-    <label for="country">Country:</label><br>
-    <input type="text" id="country" name="country" th:field="*{country}"><br><br>
-    <input type="submit" value="Submit">
-</form>
+<div class="editContainer">
+    <!--    <div th:insert="fragments/header :: main"></div>-->
+    <div class="contact-box">
+        <div class="left1"></div>
+        <div class="right1">
+            <form th:action="@{/supplier/update}" th:object="${supplierToEdit}" method="post">
+                <h2>Edit Supplier</h2>
+                <input type="text" id="id" name="id" th:field="*{id}" class="field"
+                       placeholder="Supplier ID">
+                <input type="text" id="companyName" name="companyName" th:field="*{companyName}" class="field"
+                       placeholder="Company Name">
+                <input type="text" id="address" name="address" th:field="*{address}" class="field"
+                       placeholder="Address">
+                <input type="text" id="country" name="country" th:field="*{country}" class="field"
+                       placeholder="Country">
+                <button class="btn"><a th:href="@{/supplier/all}">Back</button>
+                <hr>
+                <button type="submit" value="Submit" class="btn">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:insert="fragments/footer :: main"></div>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Edit</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/edit.css}">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+</head>
+<body>
+<div class="editContainer">
+<!--    <div th:insert="fragments/header :: main"></div>-->
+    <div class="contact-box">
+        <div class="left"></div>
+        <div class="right">
+            <form th:action="@{/updateProduct}" th:object="${productToEdit}" method="post">
+                <h2>Edit Product</h2>
+                <input type="number" id="productid" name="productid" th:field="*{id}" class="field"
+                       placeholder="Product Id">
+                <input type="text" id="productname" name="productname" th:field="*{productName}" class="field"
+                       placeholder="Product Name">
+                <input type="text" id="unitprice" name="unitprice" th:field="*{unitPrice}" class="field"
+                       placeholder="Unit Price">
+                <input type="text" id="discontinued" name="discontinued" th:field="*{discontinued}" class="field"
+                       placeholder="Discountinued True | False">
+                <button class="btn"><a th:href="@{/product}">Back</button>
+                <hr>
+                <button type="submit" value="Submit" class="btn">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:insert="fragments/footer :: main"></div>
+</body>
+</html>
