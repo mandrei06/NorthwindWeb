@@ -22,6 +22,7 @@
         <th>Country</th>
         <th>Edit</th>
         <th>Delete</th>
+        <th>Add New Supplier</th>
     </tr>
     </thead>
     <tr th:each="supplier : ${supplierAttributes}">
@@ -29,8 +30,9 @@
         <td th:text="${supplier.companyName}"></td>
         <td th:text="${supplier.address}"></td>
         <td th:text="${supplier.country}"></td>
-        <td><a th:href="@{edit/{id} (id=${supplier.id})}">Edit</a></td>
-        <td><a th:href="@{delete/{id} (id=${supplier.id})}">Delete</a></td>
+        <td><a th:href="@{/supplier/edit/{id} (id=${supplier.id})}">Edit</a></td>
+        <td><a th:href="@{/supplier/delete/{id} (id=${supplier.id})}">Delete</a></td>
+        <td><a th:href="@{/supplier/add}">Add</a></td>
     </tr>
 </table>
 <div th:insert="fragments/footer :: main"></div>
