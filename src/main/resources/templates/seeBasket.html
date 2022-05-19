@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
+</head>
+<body>
+<div th:insert="fragments/header :: main"></div>
+
+<br>
+<h1>Basket</h1>
+<br>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Product Name</th>
+        <th>Unit Price</th>
+        <th >Date</th>
+        <th><a th:href="@{/product}">  Back</a>
+        </th>
+    </tr>
+
+    </thead>
+
+    <tr th:each="product:${productBasket}">
+        <td th:text="${product.getProduct().getId()}">
+
+        </td>
+        <td th:text="${product.getProduct().productName}">
+
+        </td>
+        <td th:text="${product.getProduct().unitPrice}">
+
+        </td>
+        <td th:text="${product.getCreateDate()}">
+        </td>
+
+    </tr>
+</table>
+<footer class="bottom">
+    <div th:insert="fragments/footer :: main"></div>
+</footer>
+</body>
+</html>

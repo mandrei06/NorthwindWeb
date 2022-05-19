@@ -4,5 +4,8 @@
     <option name="defaultUnitInitialized" value="true" />
     <option name="reverseEngineeringLastDbConnectionId" value="42e47ded-0d4c-4c5b-8e86-6b2a00a0c2ec" />
     <option name="reLastEntityCreationPackage" value="src/main/java/com/sparta/northwindweb/entities" />
+    <option name="reIgnoreSlowDbConnections">
+      <ignoreDs id="42e47ded-0d4c-4c5b-8e86-6b2a00a0c2ec" />
+    </option>
   </component>
 </project>

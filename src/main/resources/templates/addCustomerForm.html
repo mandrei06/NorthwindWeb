@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Customer editor</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
+</head>
+<body>
+<!--<div th:insert="fragments/header :: main"></div>-->
+<h1>The Customer Details</h1>
+
+<form th:action="@{/addCustomer}" th:object="${customerToAdd}" method="post">
+    <label for="customerid">Customer id:</label><br>
+    <input type="text" id="customerid" name="customerid" th:field="*{id}"><br>
+    <label for="contactname">Contact name:</label><br>
+    <input type="text" id="contactname" name="contactname" th:field="*{contactName}"><br>
+    <label for="companyname">Company name:</label><br>
+    <input type="text" id="companyname" name="companyname" th:field="*{companyName}"><br>
+    <label for="phone">Phone:</label><br>
+    <input type="text" id="phone" name="phone" th:field="*{phone}"><br><br>
+    <input type="submit" value="Submit">
+</form>
+<!--<div th:insert="fragments/footer :: main"></div>-->
+</body>
+</html>
