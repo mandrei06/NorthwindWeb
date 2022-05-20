@@ -30,7 +30,7 @@ public class Config extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("customer/add/").hasAuthority("ADMIN")
+                .antMatchers("/customer/add/").hasAuthority("ADMIN")
                 .antMatchers("/addCustomer").hasAuthority("ADMIN")
                 .antMatchers("/updateCustomer").permitAll()
                 .antMatchers("/customer/edit/{id}").permitAll()

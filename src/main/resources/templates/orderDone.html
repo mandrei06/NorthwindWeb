@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
 
-  <title>Access Denied</title>
+  <title>Order Added</title>
   <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
 </head>
 <body>
 <!--<div th:insert="fragments/header :: main"></div>-->
-<h1>Customer </h1>
+<h1>Order Successfully Added</h1>
 <script th:inline="javascript">
-  window.alert("Access Denied, you don't have permission to do that!");
-  window.location.href = 'http://localhost:8080/customer';
+  window.alert("The order was added successfully! You are gonna be redirected to the previous page!");
+  window.location.href = 'http://localhost:8080/product';
 </script>
 <!--<div th:insert="fragments/footer :: main"></div>-->
 </body>
