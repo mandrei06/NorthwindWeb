@@ -2,6 +2,8 @@ package com.sparta.northwindweb.controller;
 
 import com.sparta.northwindweb.entities.Customer;
 import com.sparta.northwindweb.repositories.CustomerRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,7 @@ import java.util.List;
 @Controller
 public class CustomerController {
 
+    Logger logger = LoggerFactory.getLogger(CustomerController.class);
     @Autowired
     CustomerRepository customerRepository;
 
@@ -22,6 +25,7 @@ public class CustomerController {
         Customer customerObj=customerRepository.getById(id);
         System.out.println(customerObj);
         model.addAttribute("customerAttr",customerObj);//store the customer in model
+        logger.info("Customer returned with ID " + id);
         return "customerView";
 
     }
@@ -29,6 +33,7 @@ public class CustomerController {
     public String getCustomers(Model model){
         List<Customer> customersList=customerRepository.findAll();
         model.addAttribute("customerList",customersList);
+        logger.info("All customers returned");
         return "customer";
     }
 
@@ -42,6 +47,7 @@ public class CustomerController {
             id="00000";
         }
         model.addAttribute("customer_deleted",id);
+        logger.info("Customer deleted with ID " + id);
         return "customerDeleted";
     }
 
@@ -49,6 +55,7 @@ public class CustomerController {
     public String editCustomer(@PathVariable String id, Model model){
         Customer thisCustomer=customerRepository.getById(id);
         model.addAttribute("customerToEdit",thisCustomer);
+        logger.info("Redirecting to edit customer form");
         return "editCustomerForm";
     }
 
@@ -59,6 +66,7 @@ public class CustomerController {
         oldState.setPhone(theCustomer.getPhone());
         oldState.setCompanyName(theCustomer.getCompanyName());
         customerRepository.save(oldState);
+        logger.info("Customer edited with ID " + oldState.getId());
         return "editSuccess";
     }
 
@@ -66,6 +74,7 @@ public class CustomerController {
     public String addCustomer(Model model){
         Customer thisCustomer=new Customer();
         model.addAttribute("customerToAdd",thisCustomer);
+        logger.info("Redirecting to add customer form");
         return "addCustomerForm";
     }
     @PostMapping("/addCustomer")
@@ -76,16 +85,19 @@ public class CustomerController {
         newCustomer.setPhone(theCustomer.getPhone());
         newCustomer.setCompanyName(theCustomer.getCompanyName());
         customerRepository.save(newCustomer);
+        logger.info("Supplier added with ID " + newCustomer.getId());
         return "addSuccess";
     }
 
 
     @GetMapping("/accessDenied")
     public String getAccessDeniedPage(){
+        logger.info("Access Denied");
         return "accessDenied";
     }
     @GetMapping("/login")
     public String getLoginPage(){
+        logger.info("Redirecting to login");
         return "login";
     }
 
