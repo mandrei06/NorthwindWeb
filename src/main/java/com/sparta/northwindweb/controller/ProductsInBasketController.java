@@ -59,5 +59,11 @@ public class ProductsInBasketController {
         }
     }
 
+    @GetMapping("/orderDone")
+    public String orderDone(){
+        productList=new ProductList();
+        request.getSession(true).setAttribute("productList",productList);
+        return "orderDone";
+    }
 
 }

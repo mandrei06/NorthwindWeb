@@ -5,12 +5,40 @@
 
     <title>Customer editor</title>
     <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
+
+
+
+    <script th:inline="javascript">
+        function validateForm() {
+            let customerid = document.forms["myForm"]["customerid"].value;
+            if (customerid.length!=5) {
+                alert("ID should be exactly 5 characters long");
+                return false;
+            }
+            let contactname=document.forms["myForm"]["contactname"].value;
+            if(contactname.length<1){
+                alert("Please fill in the contact name");
+                return false;
+            }
+            let companyname=document.forms["myForm"]["companyname"].value;
+            if(companyname.length<1){
+                alert("Please fill in the company name");
+                return false;
+            }
+            let phone=document.forms["myForm"]["phone"].value;
+            if(phone.length<10){
+                alert("Please enter a valid phone number");
+                return false;
+            }
+
+        }
+    </script>
 </head>
 <body>
 <!--<div th:insert="fragments/header :: main"></div>-->
 <h1>The Customer Details</h1>
 
-<form th:action="@{/addCustomer}" th:object="${customerToAdd}" method="post">
+<form name="myForm" th:action="@{/addCustomer}" th:object="${customerToAdd}" method="post" onsubmit="return validateForm()">
     <label for="customerid">Customer id:</label><br>
     <input type="text" id="customerid" name="customerid" th:field="*{id}"><br>
     <label for="contactname">Contact name:</label><br>
