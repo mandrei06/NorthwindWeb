@@ -62,7 +62,7 @@ public class CustomerController {
         return "editSuccess";
     }
 
-    @GetMapping("customer/add/")
+    @GetMapping("/customer/add/")
     public String addCustomer(Model model){
         Customer thisCustomer=new Customer();
         model.addAttribute("customerToAdd",thisCustomer);
@@ -77,6 +77,16 @@ public class CustomerController {
         newCustomer.setCompanyName(theCustomer.getCompanyName());
         customerRepository.save(newCustomer);
         return "addSuccess";
+    }
+
+
+    @GetMapping("/accessDenied")
+    public String getAccessDeniedPage(){
+        return "accessDenied";
+    }
+    @GetMapping("/login")
+    public String getLoginPage(){
+        return "login";
     }
 
 
